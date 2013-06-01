@@ -5,6 +5,17 @@ npm in order to help in selecting the right one.
 
 Read more [about its goals](https://github.com/thlorenz/valuepack/blob/master/goals.md).
 
+## functions
+
+The entire public API is exposed via the index file:
+
+```js
+exports.storeNpmPackages  =  require('./lib/store-npm-packages');
+exports.storeNpmUsers     =  require('./lib/store-npm-users');
+exports.streamNpmPackages =  require('./lib/stream-npm-packages');
+exports.streamNpmUsers    =  require('./lib/stream-npm-users');
+```
+
 ## scripts
 
 You can play with scripts inside `./scripts`.
