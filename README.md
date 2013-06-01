@@ -15,13 +15,13 @@ The following environment variables are considered by the scripts:
 
 - `VALUEPACK_DATA` the directory in which json data fetched from the npm registry is stored (defaults to
   `valuepack-mine-npm/data`)
-- `VALUEPACK_DB` the path at which the leveldb data is stored (defaults to `valuepack-mine-npm/store/valuepack.db`)
+- `VALUEPACK_MINE_DB` the path at which the leveldb data is stored (defaults to `valuepack-mine-npm/store/valuepack-mine.db`)
 
 Make sure to include them every time you execute a script or add the following to your `.bashrc` (example):
 
 ```sh
 export VALUEPACK_DATA=~/.valuepack/data
-export VALUEPACK_DB=~/.valuepack/valuepack.db
+export VALUEPACK_MINE_DB=~/.valuepack/valuepack-mine.db
 ```
 ### fetching data initializing the data store
 
