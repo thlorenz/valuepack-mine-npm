@@ -17,6 +17,12 @@ The following environment variables are considered by the scripts:
   `valuepack-mine-npm/data`)
 - `VALUEPACK_DB` the path at which the leveldb data is stored (defaults to `valuepack-mine-npm/store/valuepack.db`)
 
+Make sure to include them every time you execute a script or add the following to your `.bashrc` (example):
+
+```sh
+export VALUEPACK_DATA=~/.valuepack/data
+export VALUEPACK_DB=~/.valuepack/valuepack.db
+```
 ### fetching data initializing the data store
 
 An init script is provided that fetches all needed data from npm and stores it as json and in a leveldb database at
@@ -27,6 +33,16 @@ Do one of the following:
 `npm run init`
 or
 `cd scripts && ./init.sh`
+
+### fetch npm data scripts
+
+```sh
+# fetch users
+./fetch-npm-users.js
+
+# fetch packages
+./fetch-npm-packages.js
+```
 
 ### rebuild script
 
