@@ -1,19 +1,21 @@
 {
-  "name": "valuepack",
+  "name": "valuepack-mine-npm",
   "version": "0.0.0",
-  "description": "Community driven rating system for nodejs modules on npm in order to help in selecting the right one. ",
-  "main": "valuepack.js",
+  "description": "Mines the npm registry for user and package data used by valuepack.",
+  "main": "valuepack-mine-npm.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "echo 'TODO'",
+    "init": "cd ./scripts && ./init.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thlorenz/valuepack.git"
+    "url": "git://github.com/thlorenz/valuepack-mine-npm.git"
   },
-  "homepage": "https://github.com/thlorenz/valuepack",
+  "homepage": "https://github.com/thlorenz/valuepack-mine-npm",
   "dependencies": {
-    "level": "~0.9.0",
-    "level-sublevel": "~4.6.9"
+    "request": "~2.21.0",
+    "level-sublevel": "~4.6.12",
+    "level": "~0.9.0"
   },
   "devDependencies": {},
   "keywords": [],
