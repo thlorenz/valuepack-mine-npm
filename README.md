@@ -79,5 +79,8 @@ Therfore if you want to query data you should always pass the `--read` flag.
     # get package count
     ./store-npm-packages.js --read --keys | wc -l
 
-    # get how may users did provide a github account
+    # query how many users did provide a github account
     ./store-npm-users.js --read --github --keys | wc -l
+
+    # query how many packages dominictarr published
+    ./store-npm-packages.js --read --owner --keys | grep dominictarr | wc -l
