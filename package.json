@@ -19,7 +19,7 @@
     "level-dump": "~0.1.0"
   },
   "devDependencies": {},
-  "keywords": [],
+  "keywords": [ "mine", "npm", "valuepack", "leveldb", "level", "db", "information" ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
