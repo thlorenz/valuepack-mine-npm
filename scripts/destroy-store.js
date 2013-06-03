@@ -3,7 +3,7 @@
 'use strict';
 /*jshint asi: true */
 
-var leveldb = require('../lib/leveldb')
+var leveldb = require('valuepack-core/mine/leveldb')
 
 leveldb.destroy(function (err) {
   if (err) return console.error(err); 

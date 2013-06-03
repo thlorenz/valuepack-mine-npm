@@ -3,7 +3,7 @@
 'use strict';
 /*jshint asi: true */
 
-var leveldb       =  require('../lib/leveldb')
+var leveldb       =  require('valuepack-core/mine/leveldb')
   , storeUsers    =  require('./store-npm-users')
   , storePackages =  require('./store-npm-packages')
 

@@ -6,10 +6,10 @@
 var path       =  require('path')
   , fs         =  require('fs')
   , sublevel   =  require('level-sublevel')
-  , leveldb    =  require('../lib/leveldb')
+  , leveldb    =  require('valuepack-core/mine/leveldb')
   , dump       =  require('level-dump')
   , store      =  require('../lib/store-npm-packages')
-  , npm        =  require('../lib/namespaces').npm
+  , npm        =  require('valuepack-core/mine/namespaces').npm
   , existsSync =  fs.existsSync || path.existsSync
   ;
 
