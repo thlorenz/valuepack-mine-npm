@@ -5,7 +5,7 @@
 
 var path        =  require('path')
   , fs          =  require('fs')
-  , usersStream =  require('../lib/stream-npm-users')
+  , usersStream =  require('../lib/fetch-all-npm-users')
   , dataDir     =  process.env.VALUEPACK_DATA || path.join(__dirname, '..', 'data')
   , jsonPath    =  path.join(dataDir, 'npm-users.json')
 

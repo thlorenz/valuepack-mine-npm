@@ -41,8 +41,13 @@ var storeNpmPackages = module.exports = function (db, cb) {
     
   var json = fs.readFileSync(jsonPath, 'utf8')
 
+  var packages;
+  try {
+    packages = JSON.parse(json);
+  } catch(e) { cb(e); }
+
   db = sublevel(db);
-  store(db, json,  function (err, subs) {
+  store(db, packages,  function (err, subs) {
     if (err) return cb(err, db);
     console.log('Stored all npm packages at: ', leveldb.location);
     cb(null, db)
