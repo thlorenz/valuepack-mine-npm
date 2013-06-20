@@ -4,7 +4,7 @@
   "description": "Mines the npm registry for user and package data used by valuepack.",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'TODO'",
+    "test": "tap test/*.js",
     "init": "cd ./scripts && ./init.sh"
   },
   "repository": {
@@ -19,7 +19,9 @@
     "level-dump": "~0.1.0",
     "valuepack-core": "~0.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tap": "~0.4.3"
+  },
   "keywords": [
     "mine",
     "npm",

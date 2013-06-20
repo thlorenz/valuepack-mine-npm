@@ -1,4 +1,4 @@
-# valuepack-mine-npm
+# valuepack-mine-npm [![build status](https://secure.travis-ci.org/thlorenz/valuepack-mine-npm.png)](http://travis-ci.org/thlorenz/valuepack-mine-npm)
 
 Supports [valuepack](https://github.com/thlorenz/valuepack), the community driven rating system for nodejs modules on
 npm in order to help in selecting the right one.

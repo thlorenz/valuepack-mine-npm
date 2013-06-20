@@ -1,0 +1,174 @@
+{
+  "aemitter": {
+    "name": "aemitter",
+    "description": "async emitter",
+    "dist-tags": {
+      "latest": "0.0.1"
+    },
+    "maintainers": [
+      {
+        "name": "mattmueller",
+        "email": "mattmuelle@gmail.com"
+      }
+    ],
+    "author": {
+      "name": "Matt Mueller"
+    },
+    "time": {
+      "modified": "2013-02-05T03:04:16.478Z"
+    },
+    "versions": {
+      "0.0.1": "latest"
+    }
+  },
+  "aenoa-supervisor": {
+    "name": "aenoa-supervisor",
+    "description": "A supervisor program for running nodejs programs",
+    "dist-tags": {
+      "latest": "0.1.34"
+    },
+    "maintainers": [
+      {
+        "name": "xavierlaumonier",
+        "email": "dev@aenoa-systems.com"
+      }
+    ],
+    "author": {
+      "name": "Isaac Z. Schlueter",
+      "email": "i@izs.me"
+    },
+    "time": {
+      "modified": "2011-09-09T10:59:47.575Z"
+    },
+    "versions": {
+      "0.1.34": "latest"
+    }
+  },
+  "aero-client": {
+    "name": "aero-client",
+    "description": "API client for aero.io",
+    "dist-tags": {
+      "latest": "0.0.1"
+    },
+    "maintainers": [
+      {
+        "name": "vesln",
+        "email": "hi@vesln.com"
+      }
+    ],
+    "author": {
+      "name": "Veselin Todorov",
+      "email": "hi@vesln.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/aeroio/node-client"
+    },
+    "time": {
+      "modified": "2012-09-18T15:31:11.474Z"
+    },
+    "versions": {
+      "0.0.1": "latest"
+    },
+    "keywords": [
+      "aero.io",
+      "aero"
+    ]
+  },
+  "aerogel": {
+    "name": "aerogel",
+    "description": "CrazyFlie control software",
+    "dist-tags": {
+      "latest": "0.0.1"
+    },
+    "maintainers": [
+      {
+        "name": "ceejbot",
+        "email": "ceejceej@gmail.com"
+      }
+    ],
+    "author": {
+      "name": "C J Silverio",
+      "email": "ceejceej@gmail.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/ceejbot/aerogel.git"
+    },
+    "time": {
+      "modified": "2013-06-18T04:23:55.861Z"
+    },
+    "versions": {
+      "0.0.1": "latest"
+    },
+    "keywords": [
+      "nodecopter",
+      "crazyflie",
+      "quadcopter",
+      "nanocopter"
+    ]
+  },
+  "aes-helper": {
+    "name": "aes-helper",
+    "description": "AES encryption & decryption drop-in helper",
+    "dist-tags": {
+      "latest": "0.0.1"
+    },
+    "maintainers": [
+      {
+        "name": "fabdrol",
+        "email": "fabian@startingpoint.nl"
+      }
+    ],
+    "author": {
+      "name": "Fabian Tollenaar"
+    },
+    "repository": {
+      "url": "https://github.com/fabdrol/node-aes-helper"
+    },
+    "time": {
+      "modified": "2012-08-05T14:40:11.487Z"
+    },
+    "versions": {
+      "0.0.1": "latest"
+    }
+  },
+  "aeternum": {
+    "name": "aeternum",
+    "description": "A process monitor in libuv",
+    "dist-tags": {
+      "latest": "0.1.4"
+    },
+    "maintainers": [
+      {
+        "name": "mmalecki",
+        "email": "me@mmalecki.com"
+      },
+      {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      {
+        "name": "avianflu",
+        "email": "charlie@charlieistheman.com"
+      },
+      {
+        "name": "bmeck",
+        "email": "bradley.meck@gmail.com"
+      }
+    ],
+    "author": {
+      "name": "Nodejitsu, Inc."
+    },
+    "repository": {
+      "type": "git",
+      "url": "http://github.com/opsmezzo/aeternum.git"
+    },
+    "time": {
+      "modified": "2013-05-24T01:32:48.661Z"
+    },
+    "versions": {
+      "0.1.4": "latest"
+    }
+  }
+}
