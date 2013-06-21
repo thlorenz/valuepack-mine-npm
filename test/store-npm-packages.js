@@ -15,8 +15,7 @@ test('\nwhen storing 6 packages by different authors', function (t) {
   var db = sublevel(level(null, { valueEncoding: 'json' }))
   
   store(db, JSON.parse(json), function (err, res) {
-    t.plan(2)
-
+    t.plan(4)
 
     t.notOk(err, 'no error')
     
@@ -64,6 +63,51 @@ test('\nwhen storing 6 packages by different authors', function (t) {
           }
       )
 
+    })
+
+    t.test('\n# indexes by package owner', function (t) {
+      var owners = []
+      dump(
+          res.sublevels.byOwner
+        , [].push.bind(owners)
+        , function (err) {
+            if (err) console.error(err)
+            t.deepEqual(
+                owners
+              , [ { key: 'ceejbotÿaerogel', value: '"aerogel"' },
+                  { key: 'fabdrolÿaes-helper', value: '"aes-helper"' },
+                  { key: 'mattmuellerÿaemitter', value: '"aemitter"' },
+                  { key: 'mmaleckiÿaeternum', value: '"aeternum"' },
+                  { key: 'veslnÿaero-client', value: '"aero-client"' },
+                  { key: 'xavierlaumonierÿaenoa-supervisor',
+                    value: '"aenoa-supervisor"' } ]
+              , 'indexes owner+package => package'
+            )
+            t.end() 
+          }
+      );
+    })
+
+    t.test('\n# indexes by keyword', function (t) {
+      var keywords = []
+      dump(
+          res.sublevels.byKeyword
+        , [].push.bind(keywords)
+        , function (err) {
+            if (err) console.error(err)
+            t.deepEqual(
+                keywords
+              , [ { key: 'aero.ioÿaero-client', value: '"aero-client"' },
+                  { key: 'aeroÿaero-client', value: '"aero-client"' },
+                  { key: 'crazyflieÿaerogel', value: '"aerogel"' },
+                  { key: 'nanocopterÿaerogel', value: '"aerogel"' },
+                  { key: 'nodecopterÿaerogel', value: '"aerogel"' },
+                  { key: 'quadcopterÿaerogel', value: '"aerogel"' } ]              
+              , 'indexes keyword+package => package'
+            )
+            t.end() 
+          }
+      );
     })
   })
 })
