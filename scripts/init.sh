@@ -10,7 +10,7 @@ echo 'Fetching npm users information from npm registry'
 VALUEPACK_DATA=$VALUEPACK_DATA ./fetch-npm-users.js
 
 echo 'Fetching npm packages information from npm registry'
-VALUEPACK_DATA=$VALUEPACK_DATA ./fetch-npm-packages.js
+VALUEPACK_DATA=$VALUEPACK_DATA ./fetch-all-npm-packages.js
 
 echo 'Rebuilding database from fetched information'
 VALUEPACK_DATA=$VALUEPACK_DATA VALUEPACK_MINE_DB=$VALUEPACK_MINE_DB ./rebuild-store.js
