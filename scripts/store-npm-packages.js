@@ -21,7 +21,7 @@ function retrieveOnly(db, cb) {
     , byKeyword =  db.sublevel(npm.byKeyword, { valueEncoding: 'utf8' });
 
   var sub = packages
-    , what = 'all'
+    , what = 'entries'
     , argv = process.argv;
 
   if (~argv.indexOf('--owner')) sub = byOwner

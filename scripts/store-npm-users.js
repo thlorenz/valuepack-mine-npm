@@ -20,7 +20,7 @@ function retrieveOnly(db, cb) {
     , byGithub =  db.sublevel(npm.byGithub, { valueEncoding: 'utf8' });
 
   var sub = users
-    , what = 'all'
+    , what = 'entries'
     , argv = process.argv;
 
   if (~argv.indexOf('--github')) sub = byGithub
