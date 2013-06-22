@@ -40,7 +40,7 @@ var storeNpmUsers = module.exports = function (db, cb) {
   var json = fs.readFileSync(jsonPath, 'utf8')
 
   db = sublevel(db);
-  store(db, json,  function (err, subs) {
+  store(db, JSON.parse(json),  function (err, subs) {
     if (err) return cb(err, db);
     console.log('Stored all npm users at: ', leveldb.location);
     cb(null, db)
