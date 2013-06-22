@@ -15,7 +15,7 @@ test('\nwhen storing 5 different authors', function (t) {
   var db = sublevel(level(null, { valueEncoding: 'json' }))
   
   store(db, JSON.parse(json), function (err, res) {
-    t.plan(2)
+    t.plan(3)
 
     if (err) console.error(err);
     t.notOk(err, 'no error')
@@ -60,7 +60,24 @@ test('\nwhen storing 5 different authors', function (t) {
             t.end()
           }
       )
+    })
 
+    t.test('\n# indexes all users that gave their github login by github', function (t) {
+      
+      var byGithubs = []
+      dump(
+          res.sublevels.byGithub
+        , [].push.bind(byGithubs)
+        , function () {
+            t.deepEqual(
+                byGithubs
+              , [ { key: 'gameboxin', value: '"gameboxin"' },
+                  { key: 'nerdyglasses', value: '"gambo"' } ]
+              , 'stores the two users that supplied github login'
+            )
+            t.end()    
+          }
+      )
     })
   })
 })
