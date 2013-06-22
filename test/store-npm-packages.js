@@ -79,8 +79,7 @@ test('\nwhen storing 6 packages by different authors', function (t) {
                   { key: 'mattmuellerÿaemitter', value: '"aemitter"' },
                   { key: 'mmaleckiÿaeternum', value: '"aeternum"' },
                   { key: 'veslnÿaero-client', value: '"aero-client"' },
-                  { key: 'xavierlaumonierÿaenoa-supervisor',
-                    value: '"aenoa-supervisor"' } ]
+                  { key: 'xavierlaumonierÿaenoa-supervisor', value: '"aenoa-supervisor"' } ]
               , 'indexes owner+package => package'
             )
             t.end() 
