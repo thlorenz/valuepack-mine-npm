@@ -1,6 +1,6 @@
 {
   "name": "valuepack-mine-npm",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Mines the npm registry for user and package data used by valuepack.",
   "main": "index.js",
   "scripts": {
