@@ -5,6 +5,17 @@ npm in order to help in selecting the right one.
 
 Read more [about its goals](https://github.com/thlorenz/valuepack/blob/master/goals.md).
 
+## example
+
+```js
+var mineNpm = require('valuepack-mine-npm');
+
+mineNpm(function (err) {
+  if (err) return console.error(err);
+  console.log('all npm users and packages stored');
+});
+```
+
 ## functions
 
 The entire public API is exposed via the index file:
