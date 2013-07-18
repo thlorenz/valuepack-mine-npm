@@ -36,9 +36,9 @@ var storeNpmPackages = module.exports = function (db, cb) {
   var dataDir = process.env.VALUEPACK_DATA || path.join(__dirname, '..', 'data')
     , jsonPath = path.join(dataDir, 'npm-packages.json')
 
-  if (!existsSync(jsonPath)) 
+  if (!existsSync(jsonPath))
     return console.error('Cannot find %s. Please make sure to run fetch-npm-packages first', jsonPath);
-    
+
   var json = fs.readFileSync(jsonPath, 'utf8')
 
   var packages;
@@ -61,7 +61,7 @@ if (!~process.argv.indexOf('--read'))
     if (err) return leveldb.close(err, db);
     storeNpmPackages(db, retrieveOnly.bind(null, db, leveldb.close))
   })
-else 
+else
   leveldb.open(function (err, db) {
     if (err) return leveldb.close(err, db);
     retrieveOnly(db, leveldb.close)

@@ -13,18 +13,18 @@ var json = fs.readFileSync(__dirname + '/fixtures/npm-packages-sample.json', 'ut
 
 test('\nwhen storing 6 packages by different authors', function (t) {
   var db = sublevel(level(null, { valueEncoding: 'json' }))
-  
+
   store(db, JSON.parse(json), function (err, res) {
     t.plan(4)
 
     t.notOk(err, 'no error')
-    
+
     t.test('\n# stores packages correctly', function (t) {
       var packages = []
       dump(
           res.sublevels.npmPackages
         , [].push.bind(packages)
-        , function (err) { 
+        , function (err) {
             if (err) console.error(err)
 
             t.equal(packages.length, 6, 'stores 6 packages')
@@ -58,7 +58,7 @@ test('\nwhen storing 6 packages by different authors', function (t) {
                     description: 'API client for aero.io' } }
               , 'stores all data of third package including repo url and keywords'
             )
-            
+
             t.end()
           }
       )
@@ -74,15 +74,15 @@ test('\nwhen storing 6 packages by different authors', function (t) {
             if (err) console.error(err)
             t.deepEqual(
                 owners
-              , [ { key: 'ceejbotÿaerogel', value: '"aerogel"' },
-                  { key: 'fabdrolÿaes-helper', value: '"aes-helper"' },
-                  { key: 'mattmuellerÿaemitter', value: '"aemitter"' },
-                  { key: 'mmaleckiÿaeternum', value: '"aeternum"' },
-                  { key: 'veslnÿaero-client', value: '"aero-client"' },
-                  { key: 'xavierlaumonierÿaenoa-supervisor', value: '"aenoa-supervisor"' } ]
+              , [ { key: 'ceejbotÿaerogel', value: 'aerogel' },
+                  { key: 'fabdrolÿaes-helper', value: 'aes-helper' },
+                  { key: 'mattmuellerÿaemitter', value: 'aemitter' },
+                  { key: 'mmaleckiÿaeternum', value: 'aeternum' },
+                  { key: 'veslnÿaero-client', value: 'aero-client' },
+                  { key: 'xavierlaumonierÿaenoa-supervisor', value: 'aenoa-supervisor' } ]
               , 'indexes owner+package => package'
             )
-            t.end() 
+            t.end()
           }
       );
     })
@@ -96,15 +96,15 @@ test('\nwhen storing 6 packages by different authors', function (t) {
             if (err) console.error(err)
             t.deepEqual(
                 keywords
-              , [ { key: 'aero.ioÿaero-client', value: '"aero-client"' },
-                  { key: 'aeroÿaero-client', value: '"aero-client"' },
-                  { key: 'crazyflieÿaerogel', value: '"aerogel"' },
-                  { key: 'nanocopterÿaerogel', value: '"aerogel"' },
-                  { key: 'nodecopterÿaerogel', value: '"aerogel"' },
-                  { key: 'quadcopterÿaerogel', value: '"aerogel"' } ]              
+              , [ { key: 'aero.ioÿaero-client', value: 'aero-client' },
+                  { key: 'aeroÿaero-client', value: 'aero-client' },
+                  { key: 'crazyflieÿaerogel', value: 'aerogel' },
+                  { key: 'nanocopterÿaerogel', value: 'aerogel' },
+                  { key: 'nodecopterÿaerogel', value: 'aerogel' },
+                  { key: 'quadcopterÿaerogel', value: 'aerogel' } ]
               , 'indexes keyword+package => package'
             )
-            t.end() 
+            t.end()
           }
       );
     })
