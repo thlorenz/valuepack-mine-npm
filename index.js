@@ -8,25 +8,25 @@ var leveldb          =  require('valuepack-core/mine/leveldb')
   , fetchNpmUsers    =  require('./lib/fetch-all-npm-users');
 
 function fetchNstoreUsers (db, cb) {
-  log('mine-npm', 'fetching npm users ...');
+  log.info('mine-npm', 'fetching npm users ...');
   
   fetchNpmUsers(function (err, res) {
     if (err) return cb(err);  
 
     var users = res.body;
-    log('mine-npm', 'storing npm users ...');
+    log.info('mine-npm', 'storing npm users ...');
     storeUsers(db, users, cb); 
   });
 }
 
 function fetchNstorePackages (db, cb) {
-  log('mine-npm', 'fetching npm packages ...');
+  log.info('mine-npm', 'fetching npm packages ...');
 
   fetchNpmPackages(function (err, res) {
     if (err) return cb(err);  
 
     var packages = res.body;
-    log('mine-npm', 'storing npm packages ...');
+    log.info('mine-npm', 'storing npm packages ...');
     storePackages(db, packages, cb); 
   });
 }
