@@ -16,7 +16,7 @@
     "request": "~2.21.0",
     "level-sublevel": "~4.6.12",
     "level-dump": "~0.4.0",
-    "valuepack-core": "~0.3.0"
+    "valuepack-core": "~0.3.7"
   },
   "devDependencies": {
     "tap": "~0.4.3",
