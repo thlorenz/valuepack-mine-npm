@@ -4,20 +4,26 @@
 /*jshint asi: true */
 
 var leveldb =  require('valuepack-core/mine/leveldb')
-  , store   =  require('..')
+  , store   =  require('../')
 
 if (~process.argv.indexOf('--destroy')) {
   leveldb.destroy(function (err) {
     if (err) return console.error(err)
     console.error('destroyed db')
 
-    store(function (err) {
-      if (err) console.error(err);  
-    });
+    leveldb.open(function (err, db) {
+      if (err) return leveldb.close(err, db);
+      store(function (err) {
+        leveldb.close(err, db);
+      })
+    })
   })
 } else {
-  store(function (err) {
-    if (err) console.error(err);  
-  });
+  leveldb.open(function (err, db) {
+    if (err) return leveldb.close(err, db);
+    store(function (err) {
+      leveldb.close(err, db);
+    })
+  })
 }
 
