@@ -5,7 +5,6 @@
 
 var path       =  require('path')
   , fs         =  require('fs')
-  , sublevel   =  require('level-sublevel')
   , leveldb    =  require('valuepack-core/mine/leveldb')
   , dump       =  require('level-dump')
   , store      =  require('../lib/store-npm-users')
@@ -14,8 +13,6 @@ var path       =  require('path')
   ;
 
 function retrieveOnly(db, cb) {
-  db = sublevel(db);
-
   var users    =  db.sublevel(npm.users, { valueEncoding: 'json' })
     , byGithub =  db.sublevel(npm.byGithub, { valueEncoding: 'utf8' });
 
@@ -39,7 +36,6 @@ var storeNpmUsers = module.exports = function (db, cb) {
     
   var json = fs.readFileSync(jsonPath, 'utf8')
 
-  db = sublevel(db);
   store(db, JSON.parse(json),  function (err, subs) {
     if (err) return cb(err, db);
     console.log('Stored all npm users at: ', leveldb.location);

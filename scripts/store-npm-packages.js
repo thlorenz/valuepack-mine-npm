@@ -5,7 +5,6 @@
 
 var path       =  require('path')
   , fs         =  require('fs')
-  , sublevel   =  require('level-sublevel')
   , leveldb    =  require('valuepack-core/mine/leveldb')
   , dump       =  require('level-dump')
   , store      =  require('../lib/store-npm-packages')
@@ -14,8 +13,6 @@ var path       =  require('path')
   ;
 
 function retrieveOnly(db, cb) {
-  db = sublevel(db);
-
   var packages  =  db.sublevel(npm.packages, { valueEncoding: 'json' })
     , byOwner   =  db.sublevel(npm.byOwner, { valueEncoding: 'utf8' })
     , byKeyword =  db.sublevel(npm.byKeyword, { valueEncoding: 'utf8' });
@@ -46,7 +43,6 @@ var storeNpmPackages = module.exports = function (db, cb) {
     packages = JSON.parse(json);
   } catch(e) { cb(e); }
 
-  db = sublevel(db);
   store(db, packages,  function (err, subs) {
     if (err) return cb(err, db);
     console.log('Stored all npm packages at: ', leveldb.location);

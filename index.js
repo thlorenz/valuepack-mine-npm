@@ -31,6 +31,14 @@ function fetchNstorePackages (db, cb) {
   });
 }
 
+/**
+ * Fetches all npm users and npm package and stores them in the given db.
+ * 
+ * @name exports
+ * @function
+ * @param db {LevelDB} expected have sublevel mixed in which is done via the leveldb.open() call
+ * @param cb {Function} called back with an error or a sublevel response
+ */
 module.exports = exports = function store (db, cb) {
   fetchNstoreUsers(db, function (err, res /* contains sublevels npmUsers and byGithub into which data was stored */) {
     if (err) return cb(err);
